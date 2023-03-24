@@ -667,9 +667,14 @@ void BinarySearchTree<Key, Value>::clear_helper(Node<Key, Value>* root){
 	if(root == nullptr){
 			return;
 		}
+			if(root -> getLeft()){
 			clear_helper(root -> getLeft()); // delete left subtree 
+			}
+			if(root -> getRight()){
 			clear_helper(root -> getRight()); // then right subtree
+			}
 			delete root; 
+			return;
 		
 }
 
